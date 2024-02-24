@@ -1,0 +1,34 @@
+---
+import Button from "../Button.astro";
+import Logo from "../Logo.astro";
+import LogoText from "../LogoText.astro";
+---
+
+<header
+  class="header flex-shrink-0 border-b-[0.5px] border-gray-700 p-4 backdrop-blur-3xl bg-transparent sticky top-0 z-10"
+>
+  <div class="flex items-center justify-between max-w-4xl m-auto">
+    <div class="flex items-center gap-3 flex-shrink-0">
+      <Logo animated />
+      <LogoText
+        animated
+        classname="text-gray-300 font-extrabold text-3xl font-sans "
+      />
+    </div>
+    <div class="flex items-center gap-8 flex-shrink-0">
+      <a href="#features" class="hidden md:block">Features</a>
+      <Button glowingBorder>
+        Try now <span class="hidden md:block">&nbsp;for free</span>
+      </Button>
+    </div>
+  </div>
+</header>
+
+<style>
+  header {
+    background-color: rgba(0, 2, 18, 0.5);
+  }
+  svg path {
+    fill: #777;
+  }
+</style>

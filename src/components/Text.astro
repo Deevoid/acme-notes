@@ -1,0 +1,39 @@
+---
+interface Props {
+  animated?: boolean;
+  classname?: string;
+}
+
+const { animated, classname } = Astro.props;
+const clx = `${animated ? "animated-text-bg" : ""} ${classname || ""}`;
+---
+
+<p class={clx}>
+  <slot />
+</p>
+
+<style>
+  .animated-text-bg {
+    --bg-size: 400%;
+    background: linear-gradient(
+        90deg,
+        rgb(var(--accent)),
+        rgb(var(--accent-light)),
+        rgb(var(--accent))
+      )
+      0 0 / var(--bg-size) 100%;
+    color: transparent;
+    background-clip: text;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .animated-text-bg {
+      animation: move-bg 8s linear infinite;
+    }
+    @keyframes move-bg {
+      to {
+        background-position: var(--bg-size) 0;
+      }
+    }
+  }
+</style>

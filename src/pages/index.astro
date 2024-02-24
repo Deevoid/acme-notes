@@ -1,22 +1,24 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Header from "../components/Sections/Header.astro";
+import Hero from "../components/Sections/Hero.astro";
 ---
 
 <Layout title="Acme Notes">
-  <main>
-    <h1>Welcome to <span class="text-gradient">Astro</span></h1>
+  <Header />
+  <main class="text-white flex-1 overflow-auto main">
+    <Hero />
+    <div class="h-[2000px]"></div>
   </main>
 </Layout>
 
 <style>
-  main {
-    margin: auto;
-    padding: 1rem;
-    width: 800px;
-    max-width: calc(100% - 2rem);
-    color: white;
-    font-size: 20px;
-    line-height: 1.6;
+  .main {
+    scroll-timeline-name: --main-scroller;
+    scroll-timeline-axis: block;
+    scrollbar-color: #767676 rgb(55, 56, 57);
+    scrollbar-width: thin;
+    scrollbar-gutter: stable;
   }
   .astro-a {
     position: absolute;
@@ -27,20 +29,7 @@ import Layout from "../layouts/Layout.astro";
     height: auto;
     z-index: -1;
   }
-  h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    line-height: 1;
-    text-align: center;
-    margin-bottom: 1em;
-  }
-  .text-gradient {
-    background-image: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 400%;
-    background-position: 0%;
-  }
+
   .instructions {
     margin-bottom: 2rem;
     border: 1px solid rgba(var(--accent-light), 25%);

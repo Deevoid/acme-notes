@@ -1,0 +1,108 @@
+---
+import Button from "../Button.astro";
+import { Image } from "astro:assets";
+import HeroImage from "../images/hero.png";
+---
+
+<div class="py-40">
+  <h1 class="text-7xl font-bold text-center">
+    <span class="text-gradient">It&apos;s time</span>
+    <p class="text-6xl mt-3">to convert ideas into actions.</p>
+  </h1>
+  <h2 class="text-center max-w-lg m-auto mt-5 text-gray-400">
+    Effortlessly organize your thoughts, ideas, and tasks with <br /> Acme Note -
+    the intuitive note-taking app designed for productivity.
+  </h2>
+  <div class="flex items-center justify-center">
+    <Button classname="rounded-full py-4 px-6 text-2xl mt-10" glowingBorder>
+      <div class="flex items-center gap-2">
+        <p class="">Try now for free</p>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          class="w-6 h-8"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </div>
+    </Button>
+  </div>
+
+  <div class="relative">
+    <div class="blur-bubble"></div>
+    <div
+      class="hero-image-wrapper rounded-lg overflow-hidden mt-20 relative max-w-6xl m-auto"
+    >
+      <Image
+        src={HeroImage}
+        alt="Acme notes home screen"
+        class="w-full hero-image rounded-xl"
+        loading="eager"
+      />
+    </div>
+  </div>
+</div>
+
+<style>
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+
+  h1 {
+    line-height: 1;
+    text-align: center;
+  }
+
+  .blur-bubble {
+    width: calc(100% - 50px);
+    height: calc(100% - 500px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100vw;
+    background: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      rgb(var(--accent-dark)) 30%,
+      rgb(161, 35, 69) 60%
+    );
+    opacity: 1;
+    filter: blur(100px);
+    position: absolute;
+  }
+
+  .hero-image-wrapper {
+    perspective: 1000px;
+    perspective-origin: 50% 40%;
+    padding: 50px;
+    view-timeline-name: --hero-image;
+    view-timeline-axis: block;
+  }
+
+  .hero-image {
+    will-change: transform;
+    transform-style: preserve-3d;
+    animation: rotate auto linear;
+    animation-timeline: --hero-image;
+    animation-range: entry 0% cover 100%;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(20deg)
+        rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+    }
+    to {
+      transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(-15deg)
+        rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+    }
+  }
+</style>

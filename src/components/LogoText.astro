@@ -1,0 +1,12 @@
+---
+interface Props {
+  classname?: string;
+  animated?: boolean;
+}
+
+const { classname, animated } = Astro.props;
+
+import Text from "./Text.astro";
+---
+
+<Text classname={classname} animated={animated}>acme notes</Text>
