@@ -1,15 +1,20 @@
 ---
 import Logo from "../atoms/Logo.astro";
 import Button from "../atoms/Button.astro";
+import Star from "../atoms/Star.astro";
 ---
 
-<div class="reminder flex flex-col items-center gap-20 pt-40">
+<div style="transform:rotate(180deg)" class="divider-wrapper">
+  <Star />
+</div>
+<div class="mt-[-128px] h-1 negative"></div>
+<div class="reminder flex flex-col items-center pt-40 pb-40">
   <Logo />
-  <h5 class="text-center text-6xl font-bold leading-normal">
+  <h5 class="text-center text-6xl font-bold mt-16 leading-normal">
     Built for the future. <br />
     Available today.
   </h5>
-  <div class="flex items-center justify-center">
+  <div class="flex items-center justify-center mt-8">
     <Button classname="rounded-full py-4 px-6 text-2xl" glowingBorder>
       <div class="flex items-center gap-2">
         <p class="">Try now for free</p>
@@ -30,12 +35,60 @@ import Button from "../atoms/Button.astro";
 </div>
 
 <style>
-  #gradient-horizontal {
-    --color-stop-1: #a770ef;
-    --color-stop-2: #cf8bf3;
-    --color-stop-3: #fdb99b;
+  .negative {
+    display: block;
+    width: 1px;
+    height: 1px;
+    min-width: 1px;
+    min-height: 1px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    margin-top: calc(-248px - 1px);
+    margin-left: calc(0px - 1px);
   }
+  .divider-wrapper {
+    pointer-events: none;
+    user-select: none;
+    position: relative;
+    width: min(1200px, 100%);
+    margin: 0px auto;
+    height: 600px;
+    overflow: hidden;
+    mask-image: radial-gradient(circle, black, transparent 80%);
 
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0px;
+      background: radial-gradient(
+        circle at bottom center,
+        rgb(var(--accent)),
+        transparent 70%
+      );
+      opacity: 0.4;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      background: var(--body-bg);
+      width: 200%;
+      left: -50%;
+      aspect-ratio: 1 / 0.7;
+      border-radius: 50%;
+      border-top: 1px solid rgba(78, 91, 217, 0.4);
+      top: 50%;
+    }
+
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      mask-image: radial-gradient(circle at center bottom, black, transparent);
+    }
+  }
   .reminder {
     > svg {
       transform: scale(3);
