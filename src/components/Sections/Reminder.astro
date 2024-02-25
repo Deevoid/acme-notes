@@ -61,6 +61,7 @@ import Star from "../atoms/Star.astro";
       content: "";
       position: absolute;
       inset: 0px;
+      z-index: -1;
       background: radial-gradient(
         circle at bottom center,
         rgb(var(--accent)),
@@ -73,6 +74,7 @@ import Star from "../atoms/Star.astro";
       content: "";
       position: absolute;
       background: var(--body-bg);
+      z-index: -1;
       width: 200%;
       left: -50%;
       aspect-ratio: 1 / 0.7;
