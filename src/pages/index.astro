@@ -3,6 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Sections/Header.astro";
 import Hero from "../components/Sections/Hero.astro";
 import HeroMarquee from "../components/Sections/HeroMarquee.astro";
+import Features from "../components/Sections/Features.astro";
+import Testimonial from "../components/Sections/Testimonial.astro";
 ---
 
 <Layout title="Acme Notes">
@@ -10,6 +12,8 @@ import HeroMarquee from "../components/Sections/HeroMarquee.astro";
   <main class="text-white flex-1 overflow-auto main">
     <Hero />
     <HeroMarquee />
+    <Features />
+    <Testimonial />
     <div class="h-[2000px]"></div>
   </main>
 </Layout>

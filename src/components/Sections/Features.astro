@@ -1,0 +1,51 @@
+---
+import HeroImage from "../../images/hero.png";
+import Image from "astro/components/Image.astro";
+import Lamp from "../atoms/Lamp.astro";
+import Feature from "../atoms/Feature.astro";
+---
+
+<div class="relative pt-52 flex flex-col gap-60">
+  <Feature
+    link=""
+    title="Seamless Cloud Sync"
+    description="Sync your data with the cloud and access it anywhere, on any device. Never worry about losing your notes again."
+    image={HeroImage}
+  />
+  <Feature
+    link=""
+    title="Boost your productivity"
+    description="Get things done faster with Acme Note's lightning fast performance and intuitive interface. Spend less time waiting and more time being productive"
+    image={HeroImage}
+  />
+  <Feature
+    link=""
+    title="Effortless search"
+    description="Find you data quickly and easily with Acme Note's powerful search feature. Never lose a note again."
+    image={HeroImage}
+  />
+  <Feature
+    link=""
+    title="Type less, do more"
+    description="Simplify your workflow with user friendly shortcuts and commands. Focus on what matters the most and let Acme Note handle the rest."
+    image={HeroImage}
+  />
+  <Feature
+    link=""
+    title="Win it with widgets"
+    description="Stay on top of your tasks and notes with Acme Note's powerful widgets. Keep your most important data at your fingertips."
+    image={HeroImage}
+  />
+  <Feature
+    link=""
+    title="Never miss a date"
+    description="Stay on top of your schedule with Acme Note's built-in calendar and timely reminders. Never miss a meeting or deadline again. Good luck."
+    image={HeroImage}
+  />
+</div>
+
+<style>
+  .hh {
+    color: red;
+  }
+</style>

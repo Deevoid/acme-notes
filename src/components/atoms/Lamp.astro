@@ -1,0 +1,38 @@
+---
+interface Props {
+  top?: string;
+  bottom?: string;
+}
+const { top = "", bottom = "" } = Astro.props;
+---
+
+<div
+  class:list={[
+    "lamp-title relative flex flex-col items-center overflow-x-clip before:pointer-events-none before:absolute before:bg-no-repeat before:transition-[transform,opacity] before:duration-1000 before:ease-in before:opacity-100 before:[background-size:50%_100%,50%_100%] before:[background-position:1%_0%,99%_0%] before:bg-[conic-gradient(from_90deg_at_80%_50%,#000212,rgb(var(--accent-color-dark))),conic-gradient(from_270deg_at_20%_50%,rgb(var(--accent-color-dark)),#000212)] before:[mask:radial-gradient(100%_50%_at_center_center,_black,_transparent)] after:pointer-events-none after:absolute after:inset-0 is-visible after:bg-[radial-gradient(ellipse_100%_40%_at_50%_60%,rgba(var(--accent-color),1),transparent)",
+    top,
+    bottom,
+  ]}
+>
+    Hello 
+</div>
+
+<style>
+  .lamp-title::before {
+    height: 40rem;
+    width: 100%;
+    view-timeline-name: --lamp-wrapper;
+    view-timeline-axis: block;
+    animation: lampAnimation auto linear;
+    animation-timeline: --lamp-wrapper;
+    animation-range: entry 0% cover 100%;
+  }
+
+  @keyframes lampAnimation {
+    from {
+      transform: rotate(180deg) scale(1);
+    }
+    to {
+      transform: rotate(180deg) scale(2);
+    }
+  }
+</style>
