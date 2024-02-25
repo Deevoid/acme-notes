@@ -1,0 +1,47 @@
+---
+import Logo from "../atoms/Logo.astro";
+import Button from "../atoms/Button.astro";
+---
+
+<div class="reminder flex flex-col items-center gap-20 pt-40">
+  <Logo />
+  <h5 class="text-center text-6xl font-bold leading-normal">
+    Built for the future. <br />
+    Available today.
+  </h5>
+  <div class="flex items-center justify-center">
+    <Button classname="rounded-full py-4 px-6 text-2xl" glowingBorder>
+      <div class="flex items-center gap-2">
+        <p class="">Try now for free</p>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          class="w-6 h-8"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </div>
+    </Button>
+  </div>
+</div>
+
+<style>
+  #gradient-horizontal {
+    --color-stop-1: #a770ef;
+    --color-stop-2: #cf8bf3;
+    --color-stop-3: #fdb99b;
+  }
+
+  .reminder {
+    > svg {
+      transform: scale(3);
+      path {
+        fill: rgb(var(--accent));
+      }
+    }
+  }
+</style>
