@@ -1,27 +1,79 @@
 ---
-interface Props {
-  top?: string;
-  bottom?: string;
-}
-const { top = "", bottom = "" } = Astro.props;
+
 ---
 
 <div
-  class:list={[
-    "lamp-title relative flex flex-col items-center overflow-x-clip before:pointer-events-none before:absolute before:bg-no-repeat before:transition-[transform,opacity] before:duration-1000 before:ease-in before:opacity-100 before:[background-size:50%_100%,50%_100%] before:[background-position:1%_0%,99%_0%] before:bg-[conic-gradient(from_90deg_at_80%_50%,#000212,rgb(var(--accent-color-dark))),conic-gradient(from_270deg_at_20%_50%,rgb(var(--accent-color-dark)),#000212)] before:[mask:radial-gradient(100%_50%_at_center_center,_black,_transparent)] after:pointer-events-none after:absolute after:inset-0 is-visible after:bg-[radial-gradient(ellipse_100%_40%_at_50%_60%,rgba(var(--accent-color),1),transparent)",
-    top,
-    bottom,
-  ]}
+  class="wrapper-parent relative flex min-h-screen pt-[380px] flex-col items-center justify-center overflow-hidden bg-body w-full rounded-md z-0"
 >
-    Hello 
-</div>
+  <div
+    class="wrapper-child relative flex w-full flex-1 scale-y-125 items-center justify-center isolate z-0"
+  >
+    <div
+      style={{
+        backgroundImage: `conic-gradient(var(--conic-position), var(--tw-gradient-stops))`,
+      }}
+      class="width absolute inset-auto right-1/2 h-56 overflow-visible w-[30rem] bg-gradient-conic from-cyan-600 via-transparent to-transparent text-white [--conic-position:from_70deg_at_center_top]"
+    >
+      <div
+        class="absolute w-[100%] left-0 bg-body h-40 bottom-0 z-20 [mask-image:linear-gradient(to_top,white,transparent)]"
+      >
+      </div>
+      <div
+        class="absolute w-40 h-[100%] left-0 bg-body bottom-0 z-20 [mask-image:linear-gradient(to_right,white,transparent)]"
+      >
+      </div>
+    </div>
+    <div
+      style={{
+        backgroundImage: `conic-gradient(var(--conic-position), var(--tw-gradient-stops))`,
+      }}
+      class="width absolute inset-auto left-1/2 h-56 w-[30rem] bg-gradient-conic from-transparent via-transparent to-cyan-600 text-white [--conic-position:from_290deg_at_center_top]"
+    >
+      <div
+        class="absolute w-40 h-[100%] right-0 bg-body bottom-0 z-20 [mask-image:linear-gradient(to_left,white,transparent)]"
+      >
+      </div>
+      <div
+        class="absolute w-[100%] right-0 bg-body h-40 bottom-0 z-20 [mask-image:linear-gradient(to_top,white,transparent)]"
+      >
+      </div>
+    </div>
+    <div
+      class="absolute top-1/2 h-48 w-full translate-y-12 scale-x-150 bg-body blur-2xl"
+    >
+    </div>
+    <div
+      class="absolute top-1/2 z-50 h-48 w-full bg-transparent opacity-10 backdrop-blur-md"
+    >
+    </div>
+    <div
+      class="absolute inset-auto z-50 h-36 w-[28rem] -translate-y-1/2 rounded-full bg-cyan-600 opacity-50 blur-3xl"
+    >
+    </div>
+    <div
+      class="absolute inset-auto z-30 h-36 w-64 -translate-y-[6rem] rounded-full bg-cyan-600 blur-2xl"
+    >
+    </div>
+    <div
+      class="width absolute inset-auto z-50 h-0.5 w-[30rem] -translate-y-[7rem] bg-cyan-500"
+    >
+    </div>
 
+    <div
+      class="absolute inset-auto z-40 h-44 w-full -translate-y-[12.5rem] bg-body"
+    >
+    </div>
+  </div>
+  <div class="relative z-50 flex -translate-y-20 flex-col items-center px-5">
+    <slot />
+  </div>
+</div>
 <style>
-  .lamp-title::before {
-    height: 40rem;
-    width: 100%;
+  .wrapper-parent {
     view-timeline-name: --lamp-wrapper;
     view-timeline-axis: block;
+  }
+  .width {
     animation: lampAnimation auto linear;
     animation-timeline: --lamp-wrapper;
     animation-range: entry 0% cover 100%;
@@ -29,10 +81,10 @@ const { top = "", bottom = "" } = Astro.props;
 
   @keyframes lampAnimation {
     from {
-      transform: rotate(180deg) scale(1);
+      width: 15rem;
     }
     to {
-      transform: rotate(180deg) scale(2);
+      width: 30rem;
     }
   }
 </style>
