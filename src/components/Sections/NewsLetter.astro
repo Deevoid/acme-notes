@@ -1,0 +1,56 @@
+---
+import Button from "../atoms/Button.astro";
+---
+
+<div class="newsletter relative py-40 px-5 md:p-40 flex flex-col items-center">
+  <h5 class="text-2xl text-center">Get more updates</h5>
+  <p class="text-center max-w-xl p-2 md:p-5 m-auto text-gray-400">
+    Subscribe to our newsletter to stay up-to-date on latest news. We only send
+    it out a few times per year when we have something interesting to tell you.
+  </p>
+  <div class="flex items-center gap-5">
+    <input
+      type="text"
+      id="first_name"
+      class="w-[250px] bg-transparent border border-slate-600 text-gray-200 text-sm rounded-full focus:ring-purple-500 focus:border-purple-500 block py-2 px-4"
+      placeholder="me@example.com"
+      required
+    />
+    <Button glowingBorder>Submit</Button>
+  </div>
+</div>
+
+<style>
+  .newsletter {
+    background: radial-gradient(
+      ellipse at center,
+      rgba(0, 225, 244, 0.15),
+      hsla(0, 0%, 100%, 0)
+    );
+
+    &::before {
+      content: "";
+      pointer-events: none;
+      user-select: none;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      mask-image: linear-gradient(black, black), linear-gradient(black, black);
+      -webkit-mask-position-x: 0%, 0%;
+      -webkit-mask-position-y: 0%, 0%;
+      mask-size: auto, auto;
+      mask-repeat: repeat, repeat;
+      mask-origin: content-box, border-box;
+      mask-clip: content-box, border-box;
+      mask-mode: match-source, match-source;
+      mask-composite: exclude;
+      padding: 1px;
+      background: linear-gradient(
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0)
+      );
+    }
+  }
+</style>
