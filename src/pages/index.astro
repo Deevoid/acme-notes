@@ -2,12 +2,14 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Sections/Header.astro";
 import Hero from "../components/Sections/Hero.astro";
+import HeroMarquee from "../components/Sections/HeroMarquee.astro";
 ---
 
 <Layout title="Acme Notes">
   <Header />
   <main class="text-white flex-1 overflow-auto main">
     <Hero />
+    <HeroMarquee />
     <div class="h-[2000px]"></div>
   </main>
 </Layout>
