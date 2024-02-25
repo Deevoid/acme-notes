@@ -5,6 +5,7 @@ export default {
     extend: {
       colors: {
         body: "rgb(0, 2, 18)",
+        accent: "rgb(136, 58, 234)",
       },
     },
   },
