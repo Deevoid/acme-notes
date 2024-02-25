@@ -5,12 +5,14 @@ import { Image } from "astro:assets";
 import HeroImage from "../../images/hero.png";
 ---
 
-<section class="pt-40 pb-20">
-  <h1 class="text-7xl font-bold text-center">
+<section class="pt-20 md:pt-40 pb-20">
+  <h1 class="text-5xl md:text-7xl font-bold text-center">
     <span class="text-gradient">It&apos;s time</span>
-    <p class="text-6xl mt-3">to convert ideas into actions.</p>
+    <p class="text-4xl md:text-6xl mt-3">to convert ideas into actions.</p>
   </h1>
-  <h2 class="text-center max-w-lg m-auto mt-5 text-gray-400">
+  <h2
+    class="text-sm md:text-base text-center max-w-lg m-auto mt-5 text-gray-400"
+  >
     Effortlessly organize your thoughts, ideas, and tasks with <br /> Acme Note -
     the intuitive <Text classname="inline" animated>note-taking</Text> app designed
     for productivity.
@@ -37,12 +39,12 @@ import HeroImage from "../../images/hero.png";
   <div class="relative">
     <div class="blur-bubble"></div>
     <div
-      class="hero-image-wrapper rounded-lg overflow-hidden mt-20 relative max-w-6xl m-auto"
+      class="hero-image-wrapper p-2 md:p-[50px] rounded-lg overflow-hidden mt-4 md:mt-20 relative max-w-6xl m-auto"
     >
       <Image
         src={HeroImage}
         alt="Acme notes home screen"
-        class="w-full hero-image rounded-xl"
+        class="w-full hero-image rounded-xl opacity-1"
         loading="eager"
       />
     </div>
@@ -60,13 +62,12 @@ import HeroImage from "../../images/hero.png";
 
   h1 {
     line-height: 1;
-    text-align: center;
   }
 
   .blur-bubble {
     width: calc(100% - 50px);
     max-width: 1200px;
-    height: calc(100% - 500px);
+    height: calc(100% - 100px);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -84,7 +85,6 @@ import HeroImage from "../../images/hero.png";
   .hero-image-wrapper {
     perspective: 1000px;
     perspective-origin: 50% 40%;
-    padding: 50px;
     view-timeline-name: --hero-image;
     view-timeline-axis: block;
   }

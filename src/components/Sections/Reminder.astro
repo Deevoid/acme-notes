@@ -4,13 +4,16 @@ import Button from "../atoms/Button.astro";
 import Star from "../atoms/Star.astro";
 ---
 
-<div style="transform:rotate(180deg)" class="divider-wrapper">
+<div
+  style="transform:rotate(180deg)"
+  class="divider-wrapper h-[500px] md:h-[600px]"
+>
   <Star />
 </div>
 <div class="mt-[-128px] h-1 negative"></div>
-<div class="reminder flex flex-col items-center pt-40 pb-40">
+<div class="reminder flex flex-col items-center pt-10 md:pt-40 pb-40">
   <Logo />
-  <h5 class="text-center text-6xl font-bold mt-16 leading-normal">
+  <h5 class="text-center text-4xl md:text-6xl font-bold mt-16 leading-normal">
     Built for the future. <br />
     Available today.
   </h5>
@@ -53,7 +56,6 @@ import Star from "../atoms/Star.astro";
     position: relative;
     width: min(1200px, 100%);
     margin: 0px auto;
-    height: 600px;
     overflow: hidden;
     mask-image: radial-gradient(circle, black, transparent 80%);
 
