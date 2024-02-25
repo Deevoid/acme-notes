@@ -12,7 +12,7 @@ import Image from "astro/components/Image.astro";
 import Lamp from "./Lamp.astro";
 ---
 
-<div class="relative -mt-60 md:mt-0">
+<div class="relative flex-shrink-0 md:mt-40 mt-40">
   <Lamp>
     <h3 class="text-3xl md:text-5xl font-semibold text-center">
       {title}
@@ -22,12 +22,12 @@ import Lamp from "./Lamp.astro";
     >
       {description}
     </p>
-    <div
-      class="flex-shrink-0 feature-image-wrapper m-auto mt-5 md:mt-16 max-w-2xl flex items-center justify-center"
-    >
-      <Image src={image} alt={title} class="feature-image rounded-xl" />
-    </div>
   </Lamp>
+  <div
+    class="flex-shrink-0 feature-image-wrapper m-auto max-w-2xl -mt-10 p-3 md:p-0 flex items-center justify-center"
+  >
+    <Image src={image} alt={title} class="feature-image rounded-xl" />
+  </div>
 </div>
 
 <style>
