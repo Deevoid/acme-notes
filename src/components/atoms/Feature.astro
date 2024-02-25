@@ -24,7 +24,7 @@ import Lamp from "./Lamp.astro";
     </p>
   </Lamp>
   <div
-    class="flex-shrink-0 feature-image-wrapper m-auto max-w-2xl -mt-10 p-3 md:p-0 flex items-center justify-center"
+    class="flex-shrink-0 relative feature-image-wrapper m-auto max-w-2xl -mt-10 p-3 md:p-0 flex items-center justify-center"
   >
     <Image src={image} alt={title} class="feature-image rounded-xl" />
   </div>
@@ -43,19 +43,22 @@ import Lamp from "./Lamp.astro";
     margin-top: calc(-248px - 1px);
     margin-left: calc(0px - 1px);
   }
-  .feature-image-wrapper {
-    perspective: 500px;
-    perspective-origin: 50% 40%;
-    view-timeline-name: --feature-image;
-    view-timeline-axis: block;
-  }
 
-  .feature-image {
-    will-change: transform;
-    /* transform-style: preserve-3d; */
-    animation: feature auto linear;
-    animation-timeline: --feature-image;
-    animation-range: entry 10% cover 100%;
+  @supports (animation-timeline: view()) {
+    .feature-image-wrapper {
+      perspective: 500px;
+      perspective-origin: 50% 40%;
+      view-timeline-name: --feature-image;
+      view-timeline-axis: block;
+    }
+
+    .feature-image {
+      will-change: transform;
+      transform-style: preserve-3d;
+      animation: feature auto linear;
+      animation-timeline: --feature-image;
+      animation-range: entry 10% cover 100%;
+    }
   }
 
   @keyframes feature {

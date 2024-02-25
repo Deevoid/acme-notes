@@ -30,6 +30,22 @@ import Footer from "../components/atoms/Footer.astro";
     scrollbar-width: thin;
     scrollbar-gutter: stable;
   }
+
+  .main::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: #aaa;
+  }
+
+  .main::-webkit-scrollbar-thumb {
+    background-color: #aaa;
+    border-radius: 4px;
+  }
+
+  .main::-webkit-scrollbar-track {
+    background-color: #767676;
+  }
+
   .astro-a {
     position: absolute;
     top: -32px;

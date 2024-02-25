@@ -44,14 +44,16 @@
   </div>
 </div>
 <style>
-  .wrapper-parent {
-    view-timeline-name: --lamp-wrapper;
-    view-timeline-axis: block;
-  }
-  .width {
-    animation: lampAnimation auto linear;
-    animation-timeline: --lamp-wrapper;
-    animation-range: entry 0% cover 100%;
+  @supports (animation-timeline: view()) {
+    .wrapper-parent {
+      view-timeline-name: --lamp-wrapper;
+      view-timeline-axis: block;
+    }
+    .width {
+      animation: lampAnimation auto linear;
+      animation-timeline: --lamp-wrapper;
+      animation-range: entry 0% cover 100%;
+    }
   }
 
   @keyframes lampAnimation {
