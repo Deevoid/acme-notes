@@ -1,0 +1,158 @@
+---
+import { Image } from "astro:assets";
+import Text from "../atoms/Text.astro";
+---
+
+<div class="mt-40">
+  <h5 class="text-center text-4xl font-bold">Read all about it</h5>
+  <div class="text-gray-400 max-w-96 md:max-w-[420px] text-center m-auto mt-5">
+    Honored twice with the prestigious Apple Design Award, <Text
+      classname="inline"
+      animated
+    >
+      Acme Notes
+    </Text>
+    has won over critics with its unique blend of powerful functionality and ease-of-use.
+    Here&apos;s what they have to say.
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-10 p-5 mt-10">
+    <div class="grid gap-10">
+      <div class="grid-child">
+        <p class="text-content text-lg md:text-2xl text-gray-400">
+          A joy to use and beautiful to look at, Acme notes has been completely
+          re-imagined to improve efficiency. Its thoughtful design and powerful
+          features help you get organized and make the most out of every day.
+          Acme notes sets the standard for how apps should be designed and
+          developed to be their best on every device.
+        </p>
+        <div class="absolute bottom-4 left-[50%] transform -rotate-12">
+          <Image
+            width={60}
+            height={60}
+            src="https://culturedcode.com/things/2024-01-20/images/nicequote-logo-apple.svg"
+            alt="Apple logo"
+          />
+        </div>
+      </div>
+      <div class="grid-child">
+        <p class="text-content text-lg md:text-2xl text-gray-400">
+          Acme notes is the best task management app out there. It is simple and
+          easy to use, and it has a beautiful design. While being powerful
+          enough for even the most detailed and organized power user, it is also
+          simple enough for the rest of us.
+        </p>
+        <div class="absolute bottom-4 right-4 transform rotate-3">
+          <Image
+            width={140}
+            height={40}
+            src="https://culturedcode.com/things/2024-01-20/images/nicequote-logo-wirecutter.svg"
+            alt="Apple logo"
+          />
+        </div>
+      </div>
+      <div class="grid-child">
+        <p class="text-content text-lg md:text-2xl text-gray-400">
+          “Acme notes offers the best combination of design and functionality of
+          any app we tested, with nearly all the features of other power user
+          applications and a delightful interface that never gets in the way of
+          your work.”
+        </p>
+        <div class="absolute bottom-4 left-[50%] transform -rotate-12">
+          <Image
+            width={140}
+            height={40}
+            src="https://culturedcode.com/things/2024-01-20/images/nicequote-logo-macstories.svg"
+            alt="Apple logo"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="grid gap-10">
+      <div class="grid-child">
+        <p class="text-content text-lg md:text-2xl text-gray-400">
+          Acme notes has an amazing design and aesthetic, and a ton of powerful
+          new features that tie it all together. It&apos;s hard for me to resist
+          when something looks this good yet still functions properly.”
+        </p>
+        <div class="absolute bottom-4 right-4 transform rotate-12">
+          <Image
+            width={140}
+            height={40}
+            src="https://culturedcode.com/things/2024-01-20/images/nicequote-logo-imore.svg"
+            alt="Apple logo"
+          />
+        </div>
+      </div>
+      <div class="grid-child">
+        <p class="text-content text-lg md:text-2xl text-gray-400">
+          For pushing the iPad down a path untraveled by other apps, and making
+          us dream of an iOS experience that&apos;s fully keyboard-optimized,
+          Acme notes.6 is the MacStories Selects “Best App Update” of 2018.”
+        </p>
+        <div
+          class="absolute text-4xl bottom-4 right-4 transform -rotate-[30deg]"
+        >
+          🥦
+        </div>
+      </div>
+      <div class="grid-child">
+        <p class="text-content text-xl md:text-2xl text-gray-400">
+          While the app immediately clicked, and was at once dead simple to get
+          started in, it&apos;s taken me quite a while to realize what actually
+          makes it so good. It was simply designed with the understanding that
+          real people are going to be using it for real life. What an amazing
+          piece of software.
+        </p>
+        <div
+          class="absolute text-5xl bottom-[50px] right-[80px] transform rotate-12"
+        >
+          🍉
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .grid-child {
+    position: relative;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(0, 225, 244, 0.15),
+      hsla(0, 0%, 100%, 0)
+    );
+
+    &::before {
+      content: "";
+      pointer-events: none;
+      user-select: none;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      mask-image: linear-gradient(black, black), linear-gradient(black, black);
+      -webkit-mask-position-x: 0%, 0%;
+      -webkit-mask-position-y: 0%, 0%;
+      mask-size: auto, auto;
+      mask-repeat: repeat, repeat;
+      mask-origin: content-box, border-box;
+      mask-clip: content-box, border-box;
+      mask-mode: match-source, match-source;
+      mask-composite: exclude;
+      border-radius: 20px;
+      padding: 1px;
+      background: linear-gradient(
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0)
+      );
+    }
+  }
+
+  .text-content {
+    height: 100%;
+    /* border: solid 1px #e5e5e5; */
+    border-radius: 16px;
+    padding: 30px;
+  }
+</style>
