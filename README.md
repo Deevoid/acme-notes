@@ -12,7 +12,7 @@ App is a web-based application designed to revolutionize the way you take notes.
 - Assumptions:
   - Assume that the audience is digitally sound and aware about the major tech companies and products being used in the market. 
   - Why? This will help us to put elements which can convey how our product differs from other products and what features we offer.
-- Attributes
+- Attributes of our notes app
     - Helps to take notes
     - Web based (Easy to access from anywhere)
     - SAAS product (To take inspiration from other SAAS landing pages)
@@ -28,7 +28,7 @@ App is a web-based application designed to revolutionize the way you take notes.
     - Widgets: To easily access notes from homescreen
 
 ---
-I've also anticipated the actions a visitor will take and what meaning he will draw from the elements but it will be beyond the scope of this readme file. Looking forward to discuss those interesting cases.
+I've also anticipated the actions a visitor will take and what meaning he/she will draw from the elements but it will be beyond the scope of this readme file. Looking forward to discuss those interesting cases.
 ---
 ##### I've used excalidraw for brainstorming the elements required in the page and scribbling a rough layout of the page. It documents the thought process behind choosing the elements for the page.
 
